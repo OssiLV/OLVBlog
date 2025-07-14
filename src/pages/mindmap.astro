@@ -1,0 +1,51 @@
+---
+import Layout from "@layouts/MainLayout.astro";
+---
+
+<Layout title="Mindmap" description="DevOps Mindmap with Markmap">
+    <div class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold mb-6 text-center">🧠 DevOps Mindmap</h1>
+
+        <!-- SVG placeholder -->
+        <svg id="markmap" class="w-full h-[600px] border rounded bg-white dark:bg-gray-900 shadow" />
+
+        <!-- Script -->
+        <script is:inline type="module">
+            import { Transformer } from "https://cdn.jsdelivr.net/npm/markmap-lib@0.15.3/dist/browser/index.min.js";
+            import { Markmap } from "https://cdn.jsdelivr.net/npm/markmap-view@0.15.3/dist/index.min.js";
+
+            const markdown = `# DevOps Roadmap
+## Fundamentals
+- Linux
+- Bash
+- Git & GitHub
+
+## Containers
+- Docker
+- Docker Compose
+
+## CI/CD
+- Jenkins
+- GitHub Actions
+
+## Cloud
+- AWS
+  - EC2
+  - IAM
+  - S3
+
+## IaC
+- Terraform
+- Ansible
+
+## Monitoring
+- Prometheus
+- Grafana`;
+
+            const transformer = new Transformer();
+            const { root } = transformer.transform(markdown);
+            const svgEl = document.getElementById("markmap");
+            Markmap.create(svgEl, null, root);
+        </script>
+    </div>
+</Layout>

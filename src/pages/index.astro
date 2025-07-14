@@ -1,49 +1,29 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from "@layouts/MainLayout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@src/consts";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<main class="max-w-3xl mx-auto px-4 py-12">
+
+		<p class="mb-6 text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+			Hi! I'm <strong>Truong Vo</strong> aka <strong>OssiLV</strong> — a DevOps fresher from Vietnam 🇻🇳 passionate about automation, cloud infrastructure, and all things DevOps. This blog is where I document my journey into the world of DevOps, cloud computing, and continuous delivery. It's not just a place to showcase what I’ve learned, but also a space where I reflect, experiment, and grow.
+		</p>
+
+		<p class="mb-4 text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+			I believe in <strong>learning by doing</strong>, so most of my posts are rooted in hands-on experience—from setting up CI/CD pipelines using Jenkins and GitHub Actions, to provisioning infrastructure on AWS using Terraform and Ansible. I'm actively building real-world projects that simulate actual industry scenarios, and I write about the lessons, mistakes, and successes along the way.
+		</p>
+
+		<p class="mb-4 text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+			My goal with this blog is two-fold: <strong>to strengthen my own understanding by teaching others</strong>, and to provide useful, beginner-friendly resources for fellow DevOps learners who are just starting out. I know how overwhelming the world of DevOps can seem at first—so I aim to break things down simply and clearly.
+		</p>
+
+		<p class="mb-4 text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+			Expect to find content about Linux commands and shell scripting, cloud best practices, Docker-based deployments, Infrastructure as Code, monitoring, security basics, and more. I'm also sharing learning roadmaps, interview prep, and career advice for those aspiring to land their first DevOps role.
+		</p>
+
+		<p class="mb-4 text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+			If you're a DevOps learner like me, I hope you'll find something here that helps you take the next step. Let’s learn, build, automate—and grow—together.
+		</p>
+	</main>
+</Layout>
